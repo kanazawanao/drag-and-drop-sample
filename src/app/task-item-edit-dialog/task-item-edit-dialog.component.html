@@ -1,1 +1,13 @@
-<p>task-item-edit-dialog works!</p>
+<div>
+  <p>
+    タイトル：<input [(ngModel)]="data.title">
+  </p>
+  <p>
+    詳細：<input [(ngModel)]="data.description">
+  </p>
+</div>
+
+<div>
+  <button mat-stroked-button (click)="cancel()">キャンセル</button>
+  <button mat-flat-button color="primary" (click)="apply()">適用</button>
+</div>

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TaskColumnComponent } from './task-column/task-column.component';
 import { TaskItemComponent } from './task-item/task-item.component';
+import { TaskItemEditDialogComponent } from './task-item-edit-dialog/task-item-edit-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskBoardComponent,
     TaskColumnComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    TaskItemEditDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -55,27 +55,16 @@ export class TaskBoardComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
+      moveItemInArray(
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      // this.exchangeArrayItem(
-      //   event.previousContainer.data,
-      //   event.container.data,
-      //   event.previousIndex,
-      //   event.currentIndex
-      // );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
     }
-  }
-
-  private exchangeArrayItem(currentArray: string[], targetArray: string[], currentIndex: number, targetIndex: number) {
-    const tempItem = currentArray[currentIndex];
-    if (currentArray.length <= targetIndex) {
-      targetIndex--;
-    }
-    currentArray[currentIndex] = targetArray[targetIndex];
-    targetArray[targetIndex] = tempItem;
   }
 }

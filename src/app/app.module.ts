@@ -6,7 +6,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskBoardComponent } from './task-board/task-board.component';
-import { TaskColumnComponent } from './task-column/task-column.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { TaskItemEditDialogComponent } from './task-item-edit-dialog/task-item-edit-dialog.component';
 
@@ -14,7 +13,6 @@ import { TaskItemEditDialogComponent } from './task-item-edit-dialog/task-item-e
   declarations: [
     AppComponent,
     TaskBoardComponent,
-    TaskColumnComponent,
     TaskItemComponent,
     TaskItemEditDialogComponent
   ],

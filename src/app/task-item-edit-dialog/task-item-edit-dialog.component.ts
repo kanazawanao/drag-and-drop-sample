@@ -8,23 +8,19 @@ import { Task } from '../models/task';
   styleUrls: ['./task-item-edit-dialog.component.scss']
 })
 export class TaskItemEditDialogComponent implements OnInit {
-
-  initItem: Task = new Task();
   constructor(
-    private dialogRef: MatDialogRef<TaskItemEditDialogComponent>, // 追加
-    @Inject(MAT_DIALOG_DATA) public data: Task
+    private dialogRef: MatDialogRef<TaskItemEditDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data?: Task
   ) { }
 
-  ngOnInit() {
-    this.initItem = JSON.parse(JSON.stringify(this.data));
-  }
+  ngOnInit() {}
 
-  apply() {
+  apply(): void {
     this.dialogRef.close(this.data);
   }
 
   cancel(): void {
-    this.dialogRef.close(this.initItem);
+    this.dialogRef.close();
   }
 
 }

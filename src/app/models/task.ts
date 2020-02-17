@@ -6,7 +6,7 @@ export class Task {
 
 export class TaskColumn {
   state: string;
-  id: string;
+  id: number;
   taskList: Task[];
 }
 

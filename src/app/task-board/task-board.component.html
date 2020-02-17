@@ -10,5 +10,13 @@
     <div class="box" *ngFor="let task of column.taskList" cdkDrag>
       <app-task-item [item]="task"></app-task-item>
     </div>
+    <div class="box">
+      <button mat-button (click)="addTask(column)">
+        +
+      </button>
+    </div>
   </div>
 </div>
+<button mat-button (click)="addColumn()">
+  +
+</button>

@@ -3,13 +3,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TaskColumn } from '../models/task';
 
 @Component({
-  selector: 'app-task-column-edit-dailog',
-  templateUrl: './task-column-edit-dailog.component.html',
-  styleUrls: ['./task-column-edit-dailog.component.scss']
+  selector: 'app-task-column-edit-dialog',
+  templateUrl: './task-column-edit-dialog.component.html',
+  styleUrls: ['./task-column-edit-dialog.component.scss']
 })
-export class TaskColumnEditDailogComponent implements OnInit {
+export class TaskColumnEditDialogComponent implements OnInit {
   constructor(
-    private dialogRef: MatDialogRef<TaskColumnEditDailogComponent>,
+    private dialogRef: MatDialogRef<TaskColumnEditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data?: TaskColumn
   ) { }
 

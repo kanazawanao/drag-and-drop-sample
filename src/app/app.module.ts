@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { TaskBoardComponent } from './task-board/task-board.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { TaskItemEditDialogComponent } from './task-item-edit-dialog/task-item-edit-dialog.component';
-import { TaskColumnEditDailogComponent } from './task-column-edit-dailog/task-column-edit-dailog.component';
+import { TaskColumnEditDialogComponent } from './task-column-edit-dialog/task-column-edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { TaskColumnEditDailogComponent } from './task-column-edit-dailog/task-co
     TaskBoardComponent,
     TaskItemComponent,
     TaskItemEditDialogComponent,
-    TaskColumnEditDailogComponent
+    TaskColumnEditDialogComponent
   ],
   imports: [
     BrowserModule,

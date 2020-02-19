@@ -3,6 +3,7 @@ import { moveItemInArray, CdkDragDrop, transferArrayItem } from '@angular/cdk/dr
 import { TaskBoard, TaskColumn, Task } from '../models/task';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskItemEditDialogComponent } from '../task-item-edit-dialog/task-item-edit-dialog.component';
+import { TaskColumnEditDialogComponent } from '../task-column-edit-dialog/task-column-edit-dialog.component';
 
 @Component({
   selector: 'app-task-board',
@@ -14,7 +15,7 @@ export class TaskBoardComponent implements OnInit {
   board: TaskBoard = {
     columnList: [
       {
-        state: 'やること',
+        state: 'TODO',
         id: 1,
         taskList: [
           {
@@ -30,7 +31,7 @@ export class TaskBoardComponent implements OnInit {
         ],
       },
       {
-        state: '実行中',
+        state: 'DOING',
         id: 2,
         taskList: [
           {
@@ -56,6 +57,7 @@ export class TaskBoardComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
+    console.log(this.board);
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,
@@ -69,8 +71,20 @@ export class TaskBoardComponent implements OnInit {
         event.currentIndex);
     }
   }
+
   addColumn() {
-    this.board.columnList.push(new TaskColumn());
+    const dialogRef = this.dialog.open(TaskColumnEditDialogComponent, {
+      data: new TaskColumn(),
+      disableClose: true
+    });
+    dialogRef.afterClosed()
+      .subscribe(result => {
+      if (result) {
+        result.id = this.board.columnList.length + 1;
+        this.connectedTo.push(result.id.toString());
+        this.board.columnList.push(result);
+      }
+    });
   }
 
   addTask(column: TaskColumn) {
@@ -81,6 +95,7 @@ export class TaskBoardComponent implements OnInit {
     dialogRef.afterClosed()
       .subscribe(result => {
       if (result) {
+        result.id = column.taskList.length + 1;
         column.taskList.push(result);
       }
     });

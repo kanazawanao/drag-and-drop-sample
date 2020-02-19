@@ -22,5 +22,4 @@ export class TaskItemEditDialogComponent implements OnInit {
   cancel(): void {
     this.dialogRef.close();
   }
-
 }
